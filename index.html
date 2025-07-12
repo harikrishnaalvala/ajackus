@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Employee Directory</h1>
+        <div class="search-add">
+            <input type="search" id="searchInput" placeholder="Search by name or email" />
+            <button id="addEmpBtn" class="add-btn">Add Employee</button>
+        </div>
+    </header>
+<section class="controls">
+  <label>
+    Sort:
+    <select id="sortSelect">
+      <option value="">--Select--</option>
+      <option value="firstName">First Name</option>
+      <option value="lastName">Last Name</option>
+      <option value="department">Department</option>
+      <option value="role">Role</option>
+    </select>
+  </label>
+  <label>
+    Show:
+    <select id="showSelect">
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="20">20</option>
+    </select>
+  </label>
+</section>
+    <main id="employeeList" class="employee-list">
+    </main>
+    <div id="addModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="addClose" class="close">&times;</span>
+            <h2>Add Employee</h2>
+            <form id="addForm">
+                <div id="formErrors"></div>
+                <label>First name
+                    <input type="text" id="addFirstName" required />
+                </label>
+                <label>Last name
+                    <input type="text" id="addLastName" required />
+                </label>
+                <label>Email
+                    <input type="email" id="addEmail" required />
+                </label>
+
+                <label>Department
+                    <select id="addDepartment" required>
+                        <option value="">Select department</option>
+                        <option>HR</option>
+                        <option>IT</option>
+                        <option>Finance</option>
+                        <option>Marketing</option>
+                    </select>
+                </label>
+
+                <label>Role
+                    <input type="text" id="addRole" required />
+                </label>
+
+                <div class="modal-buttons">
+
+                    <button type="button" id="cancelAddBtn">Cancel</button>
+
+                    <button type="submit">Add</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="filterModal" class="modal" style="display:none;">
+
+        <div class="modal-content">
+
+            <span id="filterClose" class="close">&times;</span>
+
+            <h2>Filter Employees</h2>
+
+            <form id="filterForm">
+
+                <label>First Name:
+                    <input type="text" id="filterFirstName" />
+                </label>
+                <label>Department:
+                    <input type="text" id="filterDepartment" />
+                </label>
+                <label>Role:
+                    <input type="text" id="filterRole" />
+                </label>
+                <div class="modal-buttons">
+                    <button type="button" id="cancelFilterBtn">Reset</button>
+                    <button type="submit">Apply</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
